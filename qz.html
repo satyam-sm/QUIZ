@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Question</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: pink; /* Pink background color */
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Desktop layout */
+      .quiz-container {
+        max-width: 600px;
+        margin: 10px auto;
+        padding: 20px;
+        border: 1px solid #8c8c8c;
+        border-radius: 5px;
+        background-color: #ffffff; /* White background for the quiz container */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+      }
+
+      /* Phone layout */
+      @media screen and (max-width: 600px) {
+        .quiz-container {
+          max-width: 90%;
+          padding: 10px;
+        }
+        .options li {
+          padding: 8px;
+        }
+        #submit-button {
+          margin-top: 15px;
+          padding: 8px 15px;
+          font-size: 14px;
+        }
+      }
+
+      .question {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .options {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .options li {
+        margin: 10px 0;
+        cursor: pointer; /* Make the whole option text clickable */
+        border: 1px solid #ccc; /* Add a border to each option */
+        padding: 10px;
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s; /* Smooth color transition */
+      }
+
+      .options li:hover {
+        background-color: #f2f2f2; /* Light gray background on hover */
+      }
+
+      .option-label {
+        display: inline-block;
+        width: 30px;
+        font-weight: bold;
+      }
+
+      .option-input {
+        display: none; /* Hide the checkbox */
+      }
+
+      #submit-button {
+        margin-top: 5px;
+        background-color: #ff0066; /* Pink button color */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .selected {
+        background-color: #f7b9b8 !important; /* Light pink when option is selected */
+      }
+
+      .result-label {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .correct {
+        color: #008000; /* Green color for correct answers */
+      }
+
+      .incorrect {
+        color: #ff0000; /* Red color for incorrect answers */
+      }
+      .qno {
+        margin: 0px;
+        font-size: 13px;
+        margin-bottom: 3px;
+      }
+      #frame h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .sub {
+        margin-bottom: 4px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="frame">
+      <h1>Quiz</h1>
+      <div class="sub" style="font-size: 19px;">Subject - General Knowlege</div>
+      <div class="sub">Total Questions - 5</div>
+    </div>
+    <div class="quiz-container">
+      <div class="question">
+        <p class="qno">Question 1</p>
+        What is the capital of France?
+      </div>
+      <ul class="options">
+        <li onclick="selectOption('a')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="a" class="option-input" />
+            A</label
+          >
+          Paris
+        </li>
+        <li onclick="selectOption('b')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="b" class="option-input" />
+            B</label
+          >
+          Berlin
+        </li>
+        <li onclick="selectOption('c')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="c" class="option-input" />
+            C</label
+          >
+          Madrid
+        </li>
+        <li onclick="selectOption('d')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="d" class="option-input" />
+            D</label
+          >
+          Rome
+        </li>
+      </ul>
+      <button id="submit-button" onclick="checkAnswer()">Submit</button>
+      <div class="result-label" id="result-label"></div>
+    </div>
+
+    <!-- .......... -->
+
+    <div class="quiz-container a1">
+      <div class="question">
+        <p class="qno">Question 2</p>
+        What is the largest continent?
+      </div>
+      <ul class="options">
+        <li onclick="selectOption1('a')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="a" class="option-input" />
+            A</label
+          >
+          Asia
+        </li>
+        <li onclick="selectOption1('b')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="b" class="option-input" />
+            B</label
+          >
+          Africa
+        </li>
+        <li onclick="selectOption1('c')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="c" class="option-input" />
+            C</label
+          >
+          North America
+        </li>
+        <li onclick="selectOption1('d')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="d" class="option-input" />
+            D</label
+          >
+          South america
+        </li>
+      </ul>
+      <button id="submit-button" onclick="checkAnswer()">Submit</button>
+      <div class="result-label" id="result-label"></div>
+    </div>
+
+    <!-- qn 3     -- - -->
+
+    <div class="quiz-container a1">
+      <div class="question">
+        <p class="qno">Question 3</p>
+        Which of the following is the highest mountain in the world?
+      </div>
+      <ul class="options">
+        <li onclick="selectOption1('a')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="a" class="option-input" />
+            A</label
+          >
+          Mount Everest
+        </li>
+        <li onclick="selectOption1('b')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="b" class="option-input" />
+            B</label
+          >
+          Mount Fuji
+        </li>
+        <li onclick="selectOption1('c')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="c" class="option-input" />
+            C</label
+          >
+          Mount Denali
+        </li>
+        <li onclick="selectOption1('d')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="d" class="option-input" />
+            D</label
+          >
+          Rome
+        </li>
+      </ul>
+      <button id="submit-button" onclick="checkAnswer()">Submit</button>
+      <div class="result-label" id="result-label"></div>
+    </div>
+
+    <!-- qn 4------    -->
+
+    <div class="quiz-container a1">
+      <div class="question">
+        <p class="qno">Question 4</p>
+        What is the largest continent?
+      </div>
+      <ul class="options">
+        <li onclick="selectOption1('a')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="a" class="option-input" />
+            A</label
+          >
+          Vatican City
+        </li>
+        <li onclick="selectOption1('b')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="b" class="option-input" />
+            B</label
+          >
+          Monaco
+        </li>
+        <li onclick="selectOption1('c')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="c" class="option-input" />
+            C</label
+          >
+          Nauru
+        </li>
+        <li onclick="selectOption1('d')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="d" class="option-input" />
+            D</label
+          >
+          Liechtenstein
+        </li>
+      </ul>
+      <button id="submit-button" onclick="checkAnswer()">Submit</button>
+      <div class="result-label" id="result-label"></div>
+    </div>
+
+    <!-- qn 5------    -->
+
+    <div class="quiz-container a1">
+      <div class="question">
+        <p class="qno">Question 5</p>
+        Which of the following is the first planet in the solar system?
+      </div>
+      <ul class="options">
+        <li onclick="selectOption1('a')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="a" class="option-input" />
+            A</label
+          >
+          Mercury
+        </li>
+        <li onclick="selectOption1('b')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="b" class="option-input" />
+            B</label
+          >
+          Venus
+        </li>
+        <li onclick="selectOption1('c')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="c" class="option-input" />
+            C</label
+          >
+          Earth
+        </li>
+        <li onclick="selectOption1('d')">
+          <label class="option-label"
+            ><input type="radio" name="answer" value="d" class="option-input" />
+            D</label
+          >
+          Mars
+        </li>
+      </ul>
+      <button id="submit-button" onclick="checkAnswer()">Submit</button>
+      <div class="result-label" id="result-label"></div>
+    </div>
+
+    <script>
+      function selectOption(option) {
+        const options = document.querySelectorAll(".options li");
+        options.forEach((opt) => {
+          opt.classList.remove("selected");
+        });
+
+        const selectedOption = document.querySelector(
+          `input[value="${option}"]`
+        );
+        if (selectedOption) {
+          selectedOption.checked = true;
+          selectedOption.parentElement.parentElement.classList.add("selected");
+        }
+      }
+
+      function checkAnswer() {
+        const selectedAnswer = document.querySelector(
+          'input[name="answer"]:checked'
+        );
+        const resultLabel = document.getElementById("result-label");
+        if (selectedAnswer) {
+          const userAnswer = selectedAnswer.value;
+          if (userAnswer === "a") {
+            resultLabel.textContent =
+              "Correct! Paris is the capital of France.";
+            resultLabel.classList.add("correct");
+          } else {
+            resultLabel.textContent = "Incorrect. The correct answer is Paris.";
+            resultLabel.classList.add("incorrect");
+          }
+        } else {
+          resultLabel.textContent = "Please select an answer.";
+          resultLabel.classList.remove("correct", "incorrect");
+        }
+      }
+    </script>
+  </body>
+</html>

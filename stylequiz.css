@@ -1,0 +1,24 @@
+#frame h1{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#question {
+  border: black 2px solid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.603);
+  border-radius: 5px;
+}
+div p {
+  text-align: left;
+  margin-left: 5px;
+  font-size: 1px;
+  margin-top: 2px;
+}
+
+.qn{
+  margin-left: 10px;
+}

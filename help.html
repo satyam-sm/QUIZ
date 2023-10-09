@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link rel="shortcut icon" href="https://www.quiztriviagames.com/wp-content/uploads/2021/06/cropped-favicon-Quiz-trivia-games-1.png" type="image/x-icon">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+   background-color: pink; 
+}
+#navbar{
+    width: 150vw;
+}
+nav{
+    background-color: #ab0769;
+    width: 100vw;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+nav ul li{
+    padding: 1.5rem;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+nav ul li a:hover{
+    color: black;
+    font-weight: bold;
+}
+.hamBurger{
+    display: none;
+}
+.responsive .notHome{
+    display: block;
+
+}
+#container{
+    display: flex;
+    flex-direction: row;
+
+    
+}
+#container1{
+    height: 93vh;
+    width: 55%;
+    background-color: pink;
+}
+@keyframes right {
+   from{top:20%; left:1%}
+   to{top:20%; left:50%}
+}
+@media screen and (max-width:600px){
+
+.hamBurger{
+    display: inline;
+    position: absolute;
+    right: 0;
+}
+.notHome{
+    display: none;
+}
+nav.responsive ul{
+    display: flex;
+    flex-direction: column;
+}
+}
+summary{
+    font-size: 2rem;
+    font-weight: bold;
+}
+  p{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+details{
+    padding: 1%;
+}
+h1{
+    font-size: 4rem;
+    font-weight: bolder;
+   
+}
+section{
+    width: 70vw;
+    margin: 0 auto;
+
+}
+    </style>
+</head>
+<body>
+    <nav id="navBar" class="a b">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="notHome"><a href="#">Contact Us</a></li>
+            <li class="notHome"><a href="#">Login</a></li>
+            <li class="notHome"><a href="#">Help</a></li>
+            <li class="hamBurger"><a href="javascript:void(0)" onclick="toggleNav()">&#9776;</a></li>
+        </ul>
+    </nav>
+<section>
+    <h1>FAQ</h1>
+<details>
+    <summary>How do I start a quiz?</summary>
+    <p>To begin a quiz, simply navigate to the quiz page and choose the subject. Make sure you're logged in if required.</p>
+</details>
+<details>
+    <summary>How do I answer a question?</summary>
+    <p>Once you're inside a quiz, read the question carefully and select your answer choice by clicking on it. Click "Next" to move to the next question.</p>
+</details>
+<details>
+    <summary> Can I skip a question and come back to it later?</summary>
+    <p>es, you can. Click "Skip" to move to the next question without answering the current one. You can return to skipped questions using the "Previous" button.</p>
+   </details>
+   <details>
+    <summary>Can I retake a quiz?</summary>
+    <p>Some quizzes may allow retakes, while others may not. Check the quiz details for retake options.</p>
+</details>
+<details>
+    <summary>What if I encounter technical issues?</summary>
+    <p>If you face any technical problems during a quiz, please contact our support team via abc@gmail.com for assistance.</p>
+</details>
+<details>
+    <summary>how to move on different subject?</summary>
+    <p>please first complete your on going subject quiz ,then you can move to next subject. </p>
+</details>
+<details>
+    <summary>
+        why am I unable to login?
+    </summary>
+    <p>Please make sure you have entered valid e-mail id and correct password.</p>
+</details>
+
+</details>
+
+
+
+</section>
+
+
+
+
+
+    <script>
+        function toggleNav(){
+    let navBar = document.getElementById('navBar');
+
+    if(navBar.className === '')
+        navBar.className = 'responsive';
+    else
+        navBar.className = '';
+}
+    </script>
+
+    
+</body>
+</html>

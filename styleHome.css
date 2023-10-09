@@ -1,0 +1,197 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+   background-color: pink; 
+}
+nav{
+    background-color: #ab0769;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+nav ul li{
+    padding: 1.5rem;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+nav ul li a:hover{
+    color: black;
+    font-weight: bold;
+}
+.hamBurger{
+    display: none;
+}
+.responsive .notHome{
+    display: block;
+
+}
+#introSection{
+    /* border: 2px solid black; */
+    height: 50vh;
+    background-image: url('https://www.color-meanings.com/wp-content/uploads/Purple-and-pink-gradient-pattern.jpeg');
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+    text-align: center;
+    color: white;
+    padding: 1.2rem;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+#quizTime{
+    border-radius: 10px;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    height: 30vh;
+    width: 27vw;
+    animation: bounce 2s infinite; /* Apply the "bounce" animation infinitely */
+}
+#logo{
+    height: 10vh;
+}
+#logoBox{
+    margin-left: 2rem;
+    margin-top:  2rem;
+    display: flex;
+    
+}
+@media screen and (max-width:600px){
+
+    .hamBurger{
+        display: inline;
+        position: absolute;
+        right: 0;
+    }
+    .notHome{
+        display: none;
+    }
+    nav.responsive ul{
+        display: flex;
+        flex-direction: column;
+    }
+    #quizTime{
+        height: 25vh;
+    }
+    #logoBox{
+        display: flex;
+        flex-direction: column;
+    }
+}
+#subjectSection{
+    /* border: 2px solid black; */
+    background-color: pink;
+    width: 70vw;
+    margin: 0 auto;
+}
+#subjecth2{
+    padding: 2rem;
+    color: #ab0769;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.parentSubjectBox{
+    margin: 4rem 0rem;
+    display: flex;
+    justify-content: space-around;
+}
+.subjectBox{
+    background-color:#d777b1;
+    border: 4px solid #ab0769;
+    height: 20vh;
+    width: 20vh;
+    transform: rotate(45deg);
+    transition: all 1s ;
+}
+.subjectBox:hover{
+    transform: rotate(405deg);
+    
+}
+.subjectBox p{
+    padding: 3rem;
+    text-align: center;
+    color: white;
+    transform: rotate(-45deg);
+}
+.subjectBox p:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width:800px){
+    .parentSubjectBox{
+        display: flex;
+        flex-direction: column;
+        gap: 400 px;
+    }
+    .subjectBox{
+        margin:auto;
+    }
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.footer-logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.footer-logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: #d777b1;
+}
+.footer-social {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.footer-disclaimer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+@media (max-width: 768px) {
+    .footer-logo {
+        flex-basis: 100%;
+    }
+    .footer-social {
+        margin-top: 20px;
+        justify-content: center;
+    }
+}
