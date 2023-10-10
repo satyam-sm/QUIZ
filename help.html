@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help</title>
+    <title>PGS QUIZ/Help</title>
     <link rel="shortcut icon" href="https://www.quiztriviagames.com/wp-content/uploads/2021/06/cropped-favicon-Quiz-trivia-games-1.png" type="image/x-icon">
     <style>
         *{
@@ -96,14 +96,23 @@ section{
     margin: 0 auto;
 
 }
+#conclusion{
+    margin-top: 2rem;
+}
+#conclusion a{
+    color: #ab0769;
+}
+#conclusion a:hover{
+    color: white;
+}
     </style>
 </head>
 <body>
-    <nav id="navBar" class="a b">
+    <nav id="navBar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li class="notHome"><a href="#">Contact Us</a></li>
-            <li class="notHome"><a href="#">Login</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li class="notHome"><a href="contactUs.html">Contact Us</a></li>
+            <li class="notHome"><a href="login.html">Login</a></li>
             <li class="notHome"><a href="#">Help</a></li>
             <li class="hamBurger"><a href="javascript:void(0)" onclick="toggleNav()">&#9776;</a></li>
         </ul>
@@ -120,7 +129,7 @@ section{
 </details>
 <details>
     <summary> Can I skip a question and come back to it later?</summary>
-    <p>es, you can. Click "Skip" to move to the next question without answering the current one. You can return to skipped questions using the "Previous" button.</p>
+    <p>Yes, you can. Click "Skip" to move to the next question without answering the current one. You can return to skipped questions using the "Previous" button.</p>
    </details>
    <details>
     <summary>Can I retake a quiz?</summary>
@@ -140,16 +149,9 @@ section{
     </summary>
     <p>Please make sure you have entered valid e-mail id and correct password.</p>
 </details>
-
 </details>
-
-
-
+<p id="conclusion">For more doubts you can contactUs by clicking on the following link : <a href="contactUs.html">Contact us</a></p>
 </section>
-
-
-
-
 
     <script>
         function toggleNav(){
@@ -159,7 +161,7 @@ section{
         navBar.className = 'responsive';
     else
         navBar.className = '';
-}
+    }
     </script>
 
     

@@ -131,9 +131,10 @@ h1{
 }
 @media screen and (max-width:800px){
     .parentSubjectBox{
-        display: flex;
-        flex-direction: column;
-        gap: 400 px;
+        display: grid;
+        row-gap: 10vh;
+        
+
     }
     .subjectBox{
         margin:auto;

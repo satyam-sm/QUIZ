@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>PGS QUIZ/Login</title>
     <link rel="shortcut icon" href="https://www.quiztriviagames.com/wp-content/uploads/2021/06/cropped-favicon-Quiz-trivia-games-1.png" type="image/x-icon">
     <style>
-        *{
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -41,53 +41,48 @@ nav ul li a:hover{
 }
 .responsive .notHome{
     display: block;
-
 }
 #container{
     display: flex;
-    flex-direction: row;
-
-    
+    flex-direction: row;   
 }
 #container1{
     height: 93vh;
     width: 55%;
     background-color: pink;
 }
-@keyframes right {
-   from{top:20%; left:1%}
-   to{top:20%; left:50%}
-}
 @media screen and (max-width:600px){
-
-.hamBurger{
-    display: inline;
-    position: absolute;
-    right: 0;
+    
+    .hamBurger{
+        display: inline;
+        position: absolute;
+        right: 0;
+    }
+    .notHome{
+        display: none;
+    }
+    nav.responsive ul{
+        display: flex;
+        flex-direction: column;
+    }
 }
-.notHome{
-    display: none;
+@keyframes right {
+   from{top:0%; left:1%}
+   to{top:0%; left:50%}
 }
-nav.responsive ul{
-    display: flex;
-    flex-direction: column;
-}
-}
- #mainline{
+#mainline{
     margin: 4rem 11rem;
     font-size: 8rem; 
-    animation: right 2s infinite;
-    color: rgb(246, 13, 13);
-   
-
- }
+    position: relative;
+    animation: right 2s reverse;
+    color: #ab0769;
+}
  
 #container2{
     width: 100vh;
     background-color: pink;
     display: flex;
     flex-direction: column;
-   
     align-items: center;
     
 }
@@ -157,12 +152,12 @@ nav.responsive ul{
     </style>
 </head>
 <body>
-    <nav id="navBar" class="a b">
+    <nav id="navBar" >
         <ul>
-            <li><a href="#">Home</a></li>
-            <li class="notHome"><a href="#">Contact Us</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li class="notHome"><a href="contactUs.html">Contact Us</a></li>
             <li class="notHome"><a href="#">Login</a></li>
-            <li class="notHome"><a href="#">Help</a></li>
+            <li class="notHome"><a href="help.html">Help</a></li>
             <li class="hamBurger"><a href="javascript:void(0)" onclick="toggleNav()">&#9776;</a></li>
         </ul>
     </nav>
@@ -170,7 +165,8 @@ nav.responsive ul{
         <div id="container1">
             <div id="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Eo_circle_pink_letter-q.svg/2048px-Eo_circle_pink_letter-q.svg.png" alt="logo"></div>
 
-           <marquee delay="0s" behavior="scroll" direction="left"  id="mainline">PGS QUIZ</marquee>
+           <!-- <marquee delay="0s" behavior="scroll" direction="left"  id="mainline">PGS QUIZ</marquee> -->
+           <h1 id="mainline">PGS Quiz</h1>
             <p id="qoute">You don't have to be great to start But you have to start to be great</p>
         </div>
         <div id="container2">
@@ -191,7 +187,7 @@ nav.responsive ul{
 
     </form>
     <script>
-        function validateForm() {
+    function validateForm() {
     
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -200,16 +196,17 @@ nav.responsive ul{
 
     if ( email === "" || password === "") {
         errorMessage.textContent = "Please enter both username and password.";
-    }  else if (email === "example" && password === "password123") {
+    }  
+    else if (email === "example" && password === "password123") {
         errorMessage.textContent ="Login successful!";
-        // Here you can redirect the user to another page or perform other actions upon successful login
-    } else {
+    } 
+    else {
         errorMessage.textContent = "Incorrect username or password. Please try again.";
 
-        var interval = setInterval(function() {
-            errorMessage.textContent = "";
-            clearInterval(interval); // Clear the interval after 2 seconds
-        }, 2000); // 2000 milliseconds = 2 seconds
+        // var interval = setInterval(function() {
+        //     errorMessage.textContent = "";
+        //     clearInterval(interval); 
+        // }, 2000); 
     }
 }
 function toggleNav(){
