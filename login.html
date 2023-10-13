@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PGS QUIZ/Login</title>
+    <title>Login</title>
     <link rel="shortcut icon" href="https://www.quiztriviagames.com/wp-content/uploads/2021/06/cropped-favicon-Quiz-trivia-games-1.png" type="image/x-icon">
     <style>
-*{
+        *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -14,7 +14,9 @@
 body{
    background-color: pink; 
 }
-
+#navbar{
+    width: 150vw;
+}
 nav{
     background-color: #ab0769;
     width: 100vw;
@@ -41,175 +43,118 @@ nav ul li a:hover{
 }
 .responsive .notHome{
     display: block;
+
 }
 #container{
     display: flex;
-    flex-direction: row;   
+    flex-direction: row;
+
+    
 }
 #container1{
     height: 93vh;
     width: 55%;
     background-color: pink;
 }
-@media screen and (max-width:600px){
-    
-    .hamBurger{
-        display: inline;
-        position: absolute;
-        right: 0;
-    }
-    .notHome{
-        display: none;
-    }
-    nav.responsive ul{
-        display: flex;
-        flex-direction: column;
-    }
-}
 @keyframes right {
-   from{top:0%; left:1%}
-   to{top:0%; left:50%}
+   from{top:20%; left:1%}
+   to{top:20%; left:50%}
 }
-#mainline{
-    margin: 4rem 11rem;
-    font-size: 8rem; 
-    position: relative;
-    animation: right 2s reverse;
-    color: #ab0769;
+@media screen and (max-width:600px){
+
+.hamBurger{
+    display: inline;
+    position: absolute;
+    right: 0;
 }
- 
-#container2{
-    width: 100vh;
-    background-color: pink;
+.notHome{
+    display: none;
+}
+nav.responsive ul{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
 }
-#qoute{
-    margin: 2rem;
-    font-size: 2rem;
-    color: #ab0769;
-    
 }
-#form1{
-    margin-top: 10%;
-    margin-right: 45%;
-    width: 30%;
-    padding: 5%;
-    gap: 5%;
-}
-#email{
-    font-size: 2rem;
-    padding: 5%;
-    border-radius: 9px;
-}
-#password{
-    font-size: 2rem;
-    padding: 5%;
-    border-radius: 9px;
+.login-container{
+   width: 60vw;
+   height: 70vh;
+   background-color: aliceblue;
+margin: 5% 18%;
+text-align: center;
+display: flex;
+flex-direction: column;
+padding: 3%;
 
+    
 }
-.my-button {
-    margin: 1.5rem;
-            width: 24rem; 
-            height: 4rem; 
-            font-size: 2rem; 
-            padding: 10px 20px; 
-            border-radius: 0.9rem;
-            background-color: #ab0769;
-            color: white;
-            cursor: pointer;
-        }
-        #or{
-            font-size: 1.5rem;
-            margin:0.4rem 12rem;
-            font-weight: bold;
-        }
-        #signbutton{
-            margin: 1rem;
-            width: 24rem; 
-            height: 4rem; 
-            font-size: 2rem;
-            padding: 10px 20px; 
-            border-radius: 0.9rem;
-            background-color: #ab0769;
-            color: white;
-            cursor: pointer;
-        }
-        img{
-            width: 10%;
-            height: 15%;
-            margin: 0rem 0rem;
-        }
-        #error-message{
-            font-weight: bolder;
-            font-size: 2rem;
-        }
-            
-        
-       
+.login-container h2{
+font-size: 2.5rem;
+padding: 3%;
+}
+.labelname{
+    margin: 1%;
+    font-size: 2rem;
+    padding: 2%;
+    font-weight: 400;
+}
+.userinput{
+    margin: 1.5%;
+    padding: 1%;
+    width: 15vw;
+    height: 4vh;
+    font-size: 1.5rem;
+    border-radius: 8px 10px;
+}
+button{
+    height: 6vh;
+    margin: 4%;
+    font-size: 2rem;
+    background-color: #ab0769;
+    width: 15vw;
+    border-radius: 15px;
+    color: white;
+}
+
+#error-message{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
     </style>
 </head>
 <body>
-    <nav id="navBar" >
+    <nav id="navBar" class="a b">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li class="notHome"><a href="contactUs.html">Contact Us</a></li>
+            <li><a href="#">Home</a></li>
+            <li class="notHome"><a href="#">Contact Us</a></li>
             <li class="notHome"><a href="#">Login</a></li>
-            <li class="notHome"><a href="help.html">Help</a></li>
+            <li class="notHome"><a href="#">Help</a></li>
             <li class="hamBurger"><a href="javascript:void(0)" onclick="toggleNav()">&#9776;</a></li>
         </ul>
     </nav>
-    <main id="container">
-        <div id="container1">
-            <div id="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Eo_circle_pink_letter-q.svg/2048px-Eo_circle_pink_letter-q.svg.png" alt="logo"></div>
-
-           <!-- <marquee delay="0s" behavior="scroll" direction="left"  id="mainline">PGS QUIZ</marquee> -->
-           <h1 id="mainline">PGS Quiz</h1>
-            <p id="qoute">You don't have to be great to start But you have to start to be great</p>
-        </div>
-        <div id="container2">
-            <form id="form1">
-                <input type="text" name="email" id="email" placeholder="Email address">
-                <br>
-                <br>
-                <input type="password" name="password" id="password" placeholder="Password">
-                <button class="my-button" onclick="validateForm()">Login in</button>
-                <p id="or">OR</p>
-                <button id="signbutton" onclick="validateForm()">Sign Up</button>
-            </form>
+    <div class="login-container">
+        
+        <h2>User Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username" class="labelname">Username:</label>
+                <input type="text" id="username" name="username" class="userinput" required>
+            </div>
+            <div class="input-group">
+                <label for="password" class="labelname">Password:</label>
+                <input type="password" id="password" name="password" class="userinput" required>
+            </div>
+            <button type="submit">Login</button>
             <p id="error-message"></p>
-        </div>
-    </main>
+        </form>
+    </div>
 
 
 
-    </form>
+
     <script>
-    function validateForm() {
-    
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var errorMessage = document.getElementById("error-message");
-
-
-    if ( email === "" || password === "") {
-        errorMessage.textContent = "Please enter both username and password.";
-    }  
-    else if (email === "example" && password === "password123") {
-        errorMessage.textContent ="Login successful!";
-    } 
-    else {
-        errorMessage.textContent = "Incorrect username or password. Please try again.";
-
-        // var interval = setInterval(function() {
-        //     errorMessage.textContent = "";
-        //     clearInterval(interval); 
-        // }, 2000); 
-    }
-}
-function toggleNav(){
+        function toggleNav(){
     let navBar = document.getElementById('navBar');
 
     if(navBar.className === '')
@@ -218,7 +163,24 @@ function toggleNav(){
         navBar.className = '';
 }
 
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+   
+    if (username === "user" && password === "pass") {
+        document.getElementById("error-message").textContent = "Login successful!";
+        document.getElementById("error-message").style.color = "green";
+    } else {
+        document.getElementById("error-message").textContent = "Invalid username or password.";
+        document.getElementById("error-message").style.color = "red";
+    }
+});
 
     </script>
+
+    
 </body>
 </html>
