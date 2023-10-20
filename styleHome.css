@@ -4,16 +4,24 @@
     box-sizing: border-box;
 }
 body{
-   background-color: pink; 
+    background-color: radial-gradient(circle at 51% 93%,#39dafd,#1f8ffb 69%);
 }
 nav{
-    background-color: #ab0769;
+    background-color: rgb(82, 212, 251);
+    display: flex;
+    justify-content: space-between;
+}
+.head {
+    display: flex;
 }
 nav ul{
     list-style: none;
     display: flex;
+    margin: auto ;
+    margin-right: 4rem;
 }
 nav ul li{
+    
     padding: 1.5rem;
 }
 nav ul li a {
@@ -23,7 +31,7 @@ nav ul li a {
     cursor: pointer;
 }
 nav ul li a:hover{
-    color: black;
+    color: blue;
     font-weight: bold;
 }
 .hamBurger{
@@ -31,46 +39,8 @@ nav ul li a:hover{
 }
 .responsive .notHome{
     display: block;
-
 }
-#introSection{
-    /* border: 2px solid black; */
-    height: 50vh;
-    background-image: url('https://www.color-meanings.com/wp-content/uploads/Purple-and-pink-gradient-pattern.jpeg');
-    background-size: cover;
-    display: flex;
-    justify-content: space-between;
-}
-h1{
-    text-align: center;
-    color: white;
-    padding: 1.2rem;
-    font-weight: bolder;
-    font-size: 2rem;
-}
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-#quizTime{
-    border-radius: 10px;
-    margin-top: 2rem;
-    margin-right: 2rem;
-    height: 30vh;
-    width: 27vw;
-    animation: bounce 2s infinite; /* Apply the "bounce" animation infinitely */
-}
-#logo{
-    height: 10vh;
-}
-#logoBox{
-    margin-left: 2rem;
-    margin-top:  2rem;
-    display: flex;
-    
-}
-@media screen and (max-width:600px){
-
+@media screen and (max-width:700px){
     .hamBurger{
         display: inline;
         position: absolute;
@@ -82,10 +52,67 @@ h1{
     nav.responsive ul{
         display: flex;
         flex-direction: column;
-    }
-    #quizTime{
-        height: 25vh;
-    }
+    }    
+}
+
+#introSection{
+    /* border: 2px solid black; */
+    height: 50vh;
+    background-image: url('https://img.freepik.com/free-psd/gradient-abstract-borders_23-2150602085.jpg?w=1060&t=st=1697259532~exp=1697260132~hmac=4eb658cbe66fc66e3f208480cdcf069989d2b15d85fe4c734d71c5561cc34cf0');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+    text-align: center;
+    color: rgb(32, 97, 154);
+    padding: 1.2rem;
+    font-weight:700;
+    font-size: 2rem;
+}
+#logo{
+    height: 10vh;
+}
+#logoBox{
+    margin-left: 2rem;
+    margin-top:  2rem;
+    display: flex;
+    
+}
+#introBox2{
+    margin:4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#introBox2 p{
+    font-size: 4rem;
+    color: rgb(30, 102, 147);
+    font-weight:bolder;
+}
+#introBox2 button{
+    margin: auto;
+    background-color: rgb(71, 255, 47);
+    border-radius: 20px;
+    width: 15vw;
+    height: 2vw;
+}
+#avatar{
+    margin-right: 4rem;
+    margin-top: auto;
+    width:10vw;
+}
+.avatarBox{
+    display: flex;
+    flex-direction: column;
+}
+#introBox2 button a{
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 1rem;
+}
+@media screen and (max-width:700px){
     #logoBox{
         display: flex;
         flex-direction: column;
@@ -93,7 +120,7 @@ h1{
 }
 #subjectSection{
     /* border: 2px solid black; */
-    background-color: pink;
+    /* background-color: ; */
     width: 70vw;
     margin: 0 auto;
 }
@@ -109,32 +136,44 @@ h1{
     justify-content: space-around;
 }
 .subjectBox{
-    background-color:#d777b1;
-    border: 4px solid #ab0769;
-    height: 20vh;
-    width: 20vh;
-    transform: rotate(45deg);
+    background-color:azure;
+    border: 2px solid rgb(82, 212, 251);
+    border-radius: 10px;
+    width: 20vw;
     transition: all 1s ;
 }
-.subjectBox:hover{
-    transform: rotate(405deg);
-    
+#gkBox{
+    background-image: url('https://img.freepik.com/free-vector/classic-planet-earth-with-gradient-style_23-2147914522.jpg?w=740&t=st=1697259724~exp=1697260324~hmac=a8d40f237de697b58d7e91909cc910fe2f0fb89859fc9a00b3d987a4df05f799');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;;
+}
+.subjectBox h3{
+    padding: 1rem;
+    text-align: center;
+    color: blue;
 }
 .subjectBox p{
-    padding: 3rem;
+    padding: 1rem;
     text-align: center;
-    color: white;
-    transform: rotate(-45deg);
 }
-.subjectBox p:hover{
-    text-decoration: underline;
+.level{
+    padding: 0.3rem;
+    margin: 2rem 0;
+    border: 2px solid rgb(44, 45, 46);
+}
+.subEnd{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+.subjectBox:hover{
+    transform: scale(1.1);
 }
 @media screen and (max-width:800px){
     .parentSubjectBox{
         display: grid;
         row-gap: 10vh;
-        
-
     }
     .subjectBox{
         margin:auto;
@@ -175,7 +214,7 @@ footer {
     transition: color 0.3s ease;
 }
 .footer-links a:hover {
-    color: #d777b1;
+    color: rgb(82, 212, 251);
 }
 .footer-social {
     flex: 1;
